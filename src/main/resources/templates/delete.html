@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete CARD</title>
+</head>
+<body>
+<h1>DELETE CARD</h1>
+<p>
+  <a th:href="@{/list}">Product list</a>
+</p>
+<p>
+  <a th:href="@{/list_card}">Card</a>
+</p><form th:action="@{/delete}" th:object="${shoppingCartDto}" method="post">
+  <input type="hidden" name="id" th:field="*{id}">
+  <!--  <label>Product id</label><br>-->
+  <input type="hidden" th:field="*{product.id}"><br>
+    <label>Product name</label><br>
+  <input type="text" th:field="*{title}"><br>
+    <label>Product price</label><br>
+  <input type="text" th:field="*{price}" ><br>
+  <label>Quantity</label><br>
+  <input type="number" th:field="*{quantity}"><br>
+  <input type="submit" value="Delete Cart">
+</form>
+</body>
+</html>

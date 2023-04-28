@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>EDIT CARD</title>
+</head>
+<body>
+<h1>EDIT CARD</h1>
+<p>
+  <a th:href="@{/list}">Product list</a>
+</p>
+<form th:action="@{/edit}" th:object="${shoppingCartDto}" method="post">
+  <input type="hidden" name="id" th:field="*{id}">
+<!--  <label>Product id</label><br>-->
+  <input type="hidden" th:field="*{product.id}"><br>
+<!--  <label>Product name</label><br>-->
+  <input type="hidden" th:field="*{title}"><br>
+<!--  <label>Product price</label><br>-->
+  <input type="hidden" th:field="*{price}" ><br>
+  <input type="hidden" th:field="*{is_Deleted}" ><br>
+  <label>Quantity</label><br>
+  <input type="number" th:field="*{quantity}"><br>
+  <input type="submit" value="Edit Cart">
+</form>
+</body>
+</html>
